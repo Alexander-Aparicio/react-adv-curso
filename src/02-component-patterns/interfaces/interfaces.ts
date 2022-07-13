@@ -1,10 +1,7 @@
-import { ReactElement } from "react";
-import { JsxEmit } from "typescript";
-
-export interface ProductCardProps {
-  product: Product;
-  children?: ReactElement | ReactElement[];
-}
+import { Props as ProductButtons } from "../components/ProductButtons";
+import { Props as ProductCardProps } from "../components/ProductCard";
+import { Props as ProductImage } from "../components/ProductImage";
+import { Props as ProductTitleProps } from "../components/ProductTitle";
 
 export interface Product {
   id: string;
@@ -18,14 +15,9 @@ export interface ProductContextProps {
   product: Product;
 }
 
-export interface ProductButtonsProps {
-  counter: number;
-  increaseBy: (value: number) => void;
-}
-
 export interface ProductCardHOCProps {
   ({ children, product }: ProductCardProps): JSX.Element;
-  Title: ({ title }: { title?: string }) => JSX.Element;
-  Image: ({ img }: { img?: string }) => JSX.Element;
-  Buttons: () => JSX.Element;
+  Title: (props: ProductTitleProps) => JSX.Element;
+  Image: (props: ProductImage) => JSX.Element;
+  Buttons: ({ className }: ProductButtons) => JSX.Element;
 }
