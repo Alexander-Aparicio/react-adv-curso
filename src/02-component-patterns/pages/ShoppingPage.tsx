@@ -1,7 +1,4 @@
-import { ProductCard } from "../components/ProductCard";
-import { ProductImage } from "../components/ProductImage";
-import { ProductTitle } from "../components/ProductTitle";
-import { useProduct } from "../hooks/useProduct";
+import ProductCard, { ProductImage, ProductTitle } from "../components";
 
 const product = {
   id: "1",
@@ -10,8 +7,6 @@ const product = {
 };
 
 export const ShoppingPage = () => {
-  const { counter, increaseBy } = useProduct();
-
   return (
     <div>
       <h1>Shopping Store</h1>
