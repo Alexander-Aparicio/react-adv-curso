@@ -1,3 +1,4 @@
+import { Interface } from "readline";
 import { Props as ProductButtons } from "../components/ProductButtons";
 import { Props as ProductCardProps } from "../components/ProductCard";
 import { Props as ProductImage } from "../components/ProductImage";
@@ -20,4 +21,9 @@ export interface ProductCardHOCProps {
   Title: (props: ProductTitleProps) => JSX.Element;
   Image: (props: ProductImage) => JSX.Element;
   Buttons: ({ className }: ProductButtons) => JSX.Element;
+}
+
+export interface onChangeArgs {
+  product: Product;
+  count: number;
 }
